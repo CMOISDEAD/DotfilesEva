@@ -1,0 +1,5 @@
+#!/bin/sh
+
+DIR="$HOME/.config/bspwm"
+
+rofi -show calc -modi calc -no-show-match -no-sort -theme $DIR/rofi/themes/calc.rasi

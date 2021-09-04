@@ -1,0 +1,7 @@
+# Dmenu Properties
+# -nb color
+# -nf color
+# -sb color
+
+# launch dmenu
+dmenu_run -nb '#222222' -nf '#eeeeee' -sb '#bbbbbb' -fn "Iosevka"

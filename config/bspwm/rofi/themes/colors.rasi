@@ -1,0 +1,10 @@
+* {
+transparent:		#1d2021;
+background:			#1d2021;
+foreground:			#ffffff;
+selectedf:			#1d2021;
+selected:			#ffffff;
+urgent:				#cc241d;
+off:				#cc241d;
+on:					#98971a;
+}

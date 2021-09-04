@@ -1,0 +1,24 @@
+@import "colors.rasi"
+
+* {
+    transparency:                   "real";
+    background-color:               @background;
+    text-color:                     @foreground;
+    font:            				"Iosevka 10";
+}
+
+#window {
+	border:							1px;
+    border-radius:                  5px;
+    border-color:					@selected;
+    width:      					300px;
+    y-offset: 						-8%;
+    padding:    					20px;
+}
+
+#entry {
+    background-color:               @transparent;
+    expand: 						true;
+    width: 							150px;
+    text-color:						@urgent;
+}

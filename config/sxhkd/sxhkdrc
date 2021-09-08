@@ -24,7 +24,7 @@ super + {c,r}
 
 # Mpd
 super + m
-	kitty -e ncmpcpp
+	kitty --class floats -c /home/camilo/.config/kitty/kitty_alt.conf -e ncmpcpp
 
 # Power Menu
 super + x
@@ -34,9 +34,21 @@ super + x
 ctrl + alt + {s,n,t}
 	sh ~/.config/bspwm/rofi/bin/{screenshot,network,themes}
 
-# Help Keybindings
+# Function numbers
 super + F1
   zathura ~/Desktop/Horario.pdf
+
+super + F2
+	kitty --class email -c /home/camilo/.config/kitty/kitty_alt.conf -e aerc
+
+super + F3
+	kitty --class floats -c /home/camilo/.config/kitty/kitty_alt.conf -e pulsemixer
+
+super + F4
+	passmenu
+
+super + {F5,F6,F7}
+		mpc {prev,next,toggle}
 
 # Launch Apps
 super + shift + {f,w}
@@ -44,7 +56,7 @@ super + shift + {f,w}
 
 # Launch Nvim
 super + shift + e
-  kitty -c ~/.config/nvim/configs/kitty.conf -e nvim
+  kitty --class editor -c /home/camilo/.config/kitty/kitty_alt.conf -e nvim
 
 # Take a screenshot
 Print
@@ -60,7 +72,8 @@ super + XF86Audio{RaiseVolume,LowerVolume}
 	
 # Volume control
 XF86Audio{RaiseVolume,LowerVolume}
-	volume{-up,-down}
+	pamixer {-i,-d} 5
+	# volume{-up,-down}
 
 XF86AudioMute
 	amixer set Master toggle
@@ -68,9 +81,6 @@ XF86AudioMute
 # Music control
 #XF86Audio{Next,Prev,Play,Stop}
 # mpc {next,prev,toggle,stop}
-
-super + {F5,F6,F7}
-		mpc {prev,next,toggle}
 
 # Lockscreen
 ctrl + alt + shift + l  
@@ -99,6 +109,12 @@ super + w
 # kill
 ctrl + alt + Escape
     xkill
+
+# Increase and decrease windows gaps
+super + {_, shift +} g
+    { bspc config -d focused window_gap $(( $(bspc config -d focused window_gap) + 10 )), \
+    [ $(bspc config -d focused window_gap) -ge 10 ] && \
+    bspc config -d focused window_gap $(( $(bspc config -d focused window_gap) - 10 )) }
 
 # Fullscreen or Monocle
 super + f

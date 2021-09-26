@@ -4,15 +4,15 @@ super + Return
 
 # Floating terminal
 super + shift + Return
-	kitty -f
+	kitty --class floats
 
 # Rofi App Launcher
 super + d
-	launcher
+	~/.config/rofi/bin/launcher
 
 # Rofi Dmenu
 super + shift + d
-	rofi -no-config -no-lazy-grab -show run -modi run -theme ~/.config/polybar/hack/scripts/rofi/launcher.rasi
+	/home/camilo/.local/bin/launcher	
 
 # Rofi Network Menu
 super + n
@@ -34,6 +34,9 @@ super + x
 ctrl + alt + {s,n,t}
 	sh ~/.config/bspwm/rofi/bin/{screenshot,network,themes}
 
+# Hide polybar
+super + {shift + b, b}
+	{polybar-msg cmd show,polybar-msg cmd hide && bspc config top_padding 0}
 # Function numbers
 super + F1
   zathura ~/Desktop/Horario.pdf
